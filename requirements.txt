@@ -1,0 +1,7 @@
+Django==2.2.7
+django-jsonfield==1.4.0
+django-timezone-field==4.0
+djangorestframework==3.12.1
+pytz==2020.1
+six==1.15.0
+sqlparse==0.3.1
