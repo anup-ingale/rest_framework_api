@@ -7,6 +7,7 @@ class PeriodSerializer(serializers.ModelSerializer):
         model = Period
         fields ='__all__'
 
+
 class ItemSerializer(serializers.ModelSerializer):
     activity_periods = serializers.RelatedField(source='Period',many=True,read_only=True)
     class Meta:
