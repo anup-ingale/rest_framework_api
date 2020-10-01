@@ -9,9 +9,10 @@ class Member(models.Model):
    tz = TimeZoneField(default='America/Los_Angeles')
 
 class Period(models.Model):
-   member = models.ForeignKey(Member, on_delete=models.CASCADE)
+   member = models.ManyToManyField(Member)
+   # member = models.ForeignKey(Member, on_delete=models.CASCADE)
    start = models.DateTimeField()
    end = models.DateTimeField()
 
-   def query(self):
-      return '{} {} {} '.format(self.member.mid,self.member.real_name,self.member.tz)
+   # def query(self):
+   #    return '{} {} {} '.format(self.member.mid,self.member.real_name,self.member.tz)
