@@ -4,7 +4,7 @@ import  json
 
 # Create your models here.
 class Member(models.Model):
-   mid = models.CharField(max_length=12)
+   mid =models.CharField(max_length=12)
    real_name = models.CharField(max_length=60)
    tz = TimeZoneField(default='America/Los_Angeles')
 
@@ -14,4 +14,4 @@ class Period(models.Model):
    end = models.DateTimeField()
 
    def query(self):
-      return self.start and self.end
+      return '{} {} {} '.format(self.member.mid,self.member.real_name,self.member.tz)

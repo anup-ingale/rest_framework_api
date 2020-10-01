@@ -1,16 +1,6 @@
-from  django.http import  HttpResponse
+from django.http import HttpResponse, JsonResponse
 from  api.models import Member, Period
-from .serializers import  PeriodSerializer , ItemSerializer
-from rest_framework.decorators import api_view
 from django.core import  serializers
-
-# def data(request):
-#     users = Member.objects.all()
-#     activityperiod = Period.objects.all()
-#     MemberSerialize = [ItemSerializer('json',users,many=True)]
-#     PeriodSerialize = [PeriodSerializer('json',activityperiod,many=True)]
-#     list_final = MemberSerialize + PeriodSerialize
-#     return HttpResponse(list_final,content_type="text/json-comment-filtered")
 
 def data(request):
     users = Member.objects.all()
