@@ -12,7 +12,7 @@ def data(request):
         temp_period = []
         for r in rec.period_set.all():
             temp_period.append({'start':str(r.start),'end':str(r.end)})
-        temp_mem = {'mid': rec.mid, 'real_name': rec.real_name, 'activity_period':temp_period}
+        temp_mem = {'mid': rec.mid, 'real_name': rec.real_name, 'timezone':str(rec.tz),'activity_period':temp_period}
         member.append(temp_mem)
     dict = {'ok':True,'members':member}
     return HttpResponse(json.dumps(dict),content_type="text/json-comment-filtered")
