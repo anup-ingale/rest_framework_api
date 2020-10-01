@@ -12,4 +12,4 @@ class ItemSerializer(serializers.ModelSerializer):
     activity_periods = serializers.RelatedField(source='Period',many=True,read_only=True)
     class Meta:
         model = Member
-        fields = ('mid','real_name', 'tz', 'query')
+        fields = ('mid','real_name', 'tz', 'activity_periods')
